@@ -1,3 +1,7 @@
+import { useState } from 'react'
+import { ALL_AUTHORS } from "../queries"
+import { useQuery } from "@apollo/client/react"
+
 const Authors = (props) => {
   if (!props.show) {
     return null
