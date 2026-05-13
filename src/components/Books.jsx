@@ -11,7 +11,7 @@ const Books = (props) => {
     return null
   }
 
-  const books = []
+  const books = data.allBooks
 
   return (
     <div>
