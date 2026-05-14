@@ -51,3 +51,5 @@ export const EDIT_BORN = gql`
         name
         born
       }
+  }
+`
