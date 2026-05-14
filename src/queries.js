@@ -42,3 +42,10 @@ export const CREATE_BOOK = gql`
     }
   }
 `
+export const EDIT_PUBLISHER = gql`
+  mutation editPublisher(
+    $name: String!, 
+    $setBornTo: Int!
+    ){
+      
+    }
