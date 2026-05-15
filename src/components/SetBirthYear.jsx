@@ -14,7 +14,7 @@ const SetBirthYear = (props) => {
     editBorn({
       variables: {
         name,
-        born
+        birth
       }
     })
 
