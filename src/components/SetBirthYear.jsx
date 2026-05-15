@@ -18,7 +18,7 @@ const SetBirthYear = (props) => {
       }
     })
 
-    setBirth('')
+    setBorn('')
   }
 
   return (
