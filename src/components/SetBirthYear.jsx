@@ -8,6 +8,12 @@ const SetBirthYear = (props) => {
 
   const [editBorn] = useMutation(EDIT_BORN)
 
+  const submit = async (event) => {
+    event.preventDefault()
+
+    
+  }
+
   return (
     <div>
       <h2>Set birthyear</h2>
