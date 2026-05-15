@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/client/react"
 
 const SetBirthYear = (props) => {
   const [name, setName] = useState('')
-  const [birth, setBirth] = ('')
+  const [born, setBorn] = ('')
 
   const [editBorn] = useMutation(EDIT_BORN)
 
