@@ -1,6 +1,4 @@
 import { gql } from '@apollo/client'
-import { useMutation } from '@apollo/client/react'
-
 
 export const ALL_AUTHORS = gql`
   query {
@@ -42,6 +40,7 @@ export const CREATE_BOOK = gql`
     }
   }
 `
+
 export const EDIT_BORN = gql`
   mutation editBorn($name: String!, $setBornTo: Int!) {
     editAuthor(
