@@ -3,7 +3,7 @@ import { EDIT_BORN } from "../queries"
 import { useMutation } from "@apollo/client/react"
 
 const SetBirthYear = (props) => {
-  const [author, setAuthors] = useState('')
+  const [name, setName] = useState('')
   const [birth, setBirth] = ('')
 
   const [editBorn] = useMutation(EDIT_BORN)
@@ -11,9 +11,12 @@ const SetBirthYear = (props) => {
   const submit = async (event) => {
     event.preventDefault()
 
-    editBorn(
-      
-    )
+    editBorn({
+      variables: {
+        name,
+        born
+      }
+    })
 
     setBirth('')
   }
