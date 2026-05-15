@@ -24,7 +24,7 @@ const SetBirthYear = (props) => {
   return (
     <div>
       <h2>Set birthyear</h2>
-      <form>
+      <form onSubmit={submit}>
         <div>
           name
           <select>
