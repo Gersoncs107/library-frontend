@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import { EDIT_BORN } from "../queries"
 
 const SetBirthYear = (props) => {
   return (
