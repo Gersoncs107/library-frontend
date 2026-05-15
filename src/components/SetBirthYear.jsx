@@ -6,6 +6,8 @@ const SetBirthYear = (props) => {
   const [author, setAuthors] = useState('')
   const [birth, setBirth] = ['']
 
+  const [editBorn] = useMutation(EDIT_BORN)
+
   return (
     <div>
       <h2>Set birthyear</h2>
