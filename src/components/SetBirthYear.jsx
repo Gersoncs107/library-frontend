@@ -11,7 +11,11 @@ const SetBirthYear = (props) => {
   const submit = async (event) => {
     event.preventDefault()
 
-    
+    editBorn(
+      
+    )
+
+    setBirth('')
   }
 
   return (
