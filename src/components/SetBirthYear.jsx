@@ -6,7 +6,9 @@ const SetBirthYear = (props) => {
   const [name, setName] = useState(props.authors[0]?.name ?? '')
   const [born, setBorn] = useState('')
 
-  const [editBorn] = useMutation(EDIT_BORN, )
+  const [editBorn] = useMutation(EDIT_BORN, {
+    pollInterval: 2000
+  })
 
   const submit = async (event) => {
     event.preventDefault()
