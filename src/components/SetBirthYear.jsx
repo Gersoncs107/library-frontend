@@ -6,9 +6,7 @@ const SetBirthYear = (props) => {
   const [name, setName] = useState(props.authors[0]?.name ?? '')
   const [born, setBorn] = useState('')
 
-  const [editBorn] = useMutation(EDIT_BORN, {
-    refetchQueries: [{ query: props.ALL_AUTHORS }]
-  })
+  const [editBorn] = useMutation(EDIT_BORN, )
 
   const submit = async (event) => {
     event.preventDefault()
