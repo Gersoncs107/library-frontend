@@ -7,7 +7,10 @@ const SetBirthYear = (props) => {
   const [born, setBorn] = useState('')
 
   const [editBorn] = useMutation(EDIT_BORN, {
-    pollInterval: 2000
+    refetchQueries: [
+      { query: props.ALL_AUTHORS },
+      { query: props.ALL_BOOKS }
+    ]
   })
 
   const submit = async (event) => {
