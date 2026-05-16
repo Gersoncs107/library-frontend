@@ -4,9 +4,7 @@ import SetBirthYear from "./SetBirthYear"
 
 
 const Authors = (props) => {
-  const { loading, error, data } = useQuery(ALL_AUTHORS, {
-    pollInterval: 2000
-  })
+  const { loading, error, data } = useQuery(ALL_AUTHORS)
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error.message}</p>
