@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { EDIT_BORN } from "../queries"
+import { EDIT_BORN, ALL_AUTHORS } from "../queries"
 import { useMutation } from "@apollo/client/react"
 
 const SetBirthYear = (props) => {
@@ -8,8 +8,7 @@ const SetBirthYear = (props) => {
 
   const [editBorn] = useMutation(EDIT_BORN, {
     refetchQueries: [
-      { query: props.ALL_AUTHORS },
-      { query: props.ALL_BOOKS }
+      { query: ALL_AUTHORS }
     ]
   })
 
