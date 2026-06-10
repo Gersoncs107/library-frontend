@@ -6,7 +6,6 @@ const LoginForm = ({ setError, setToken }) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-
   const [ login ] = useMutation(LOGIN, {
     onCompleted: (data) => {
       const token = data.login.value
@@ -17,7 +16,6 @@ const LoginForm = ({ setError, setToken }) => {
       setError(error.message)
     }
   })
-
 
   const submit = (event) => {
     event.preventDefault()
