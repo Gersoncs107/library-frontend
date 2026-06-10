@@ -25,7 +25,6 @@ const LoginForm = ({ setError, setToken }) => {
     login({ variables: { username, password } })
   }
 
-
   return (
     <div>
       <form onSubmit={submit}>
