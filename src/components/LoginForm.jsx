@@ -19,7 +19,6 @@ const LoginForm = ({ setError, setToken }) => {
   })
 
 
-
   const submit = (event) => {
     event.preventDefault()
     login({ variables: { username, password } })
