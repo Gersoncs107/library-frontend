@@ -7,8 +7,8 @@ import LoginForm from './components/LoginForm'
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem('library-user-token'))
-
   const [page, setPage] = useState('authors')
+  const client = useApolloClient()
 
   if (!token) {
     return <LoginForm setToken={setToken} />
