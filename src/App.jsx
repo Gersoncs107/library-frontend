@@ -5,7 +5,13 @@ import NewBook from './components/NewBook'
 import LoginForm from './components/LoginForm'
 
 const App = () => {
+  const [token, setToken] = useState(null)
+
   const [page, setPage] = useState('authors')
+
+  if (!token) {
+    return <LoginForm setToken={setToken} />
+  }
 
   return (
     <div>
