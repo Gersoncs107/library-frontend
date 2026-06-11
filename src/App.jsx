@@ -10,6 +10,13 @@ const App = () => {
   const [page, setPage] = useState('authors')
   const client = useApolloClient()
 
+  const onLogout = () => {
+    setToken(null)
+    localStorage.clear()
+    client.resetStore()
+  }
+  // If the user is not logged in, show the login form
+
   if (!token) {
     return <LoginForm setToken={setToken} />
   }
