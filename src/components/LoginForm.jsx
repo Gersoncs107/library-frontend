@@ -10,7 +10,7 @@ const LoginForm = ({ setError, setToken }) => {
     onCompleted: (data) => {
       const token = data.login.value
       setToken(token)
-      localStorage.setItem('phonebook-user-token', token)
+      localStorage.setItem('library-user-token', token)
     },
     onError: (error) => {
       setError(error.message)
