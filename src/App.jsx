@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useApolloClient, useQuery } from '@apollo/client/react'
+import { useApolloClient } from '@apollo/client/react'
 import Authors from './components/Authors'
 import Books from './components/Books'
 import NewBook from './components/NewBook'
@@ -15,7 +15,6 @@ const App = () => {
     localStorage.clear()
     client.resetStore()
   }
-  // If the user is not logged in, show the login form
 
   if (!token) {
     return (
@@ -23,10 +22,15 @@ const App = () => {
         <div>
           <button onClick={() => setPage('authors')}>authors</button>
           <button onClick={() => setPage('books')}>books</button>
-          <button onClick={() => }>login</button>
+          <button onClick={() => setPage('login')}>login</button>
         </div>
-          <Authors show={page === 'authors'} />
-          <Books show={page === 'books'} />
+        <Authors show={page === 'authors'} />
+        <Books show={page === 'books'} />
+        <LoginForm
+          show={page === 'login'}
+          setToken={setToken}
+          setError={(msg) => console.error(msg)}
+        />
       </div>
     )
   }
@@ -38,12 +42,10 @@ const App = () => {
         <button onClick={() => setPage('books')}>books</button>
         <button onClick={() => setPage('add')}>add book</button>
         <button onClick={onLogout}>logout</button>
-      </div>      
+      </div>
 
       <Authors show={page === 'authors'} />
-
       <Books show={page === 'books'} />
-
       <NewBook show={page === 'add'} />
     </div>
   )
