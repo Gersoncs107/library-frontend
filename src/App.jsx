@@ -18,7 +18,16 @@ const App = () => {
   // If the user is not logged in, show the login form
 
   if (!token) {
-    return <LoginForm setToken={setToken} />
+    return (
+      <div>
+        <div>
+          <button onClick={() => setPage('authors')}>authors</button>
+          <button onClick={() => setPage('books')}>books</button>
+        </div>
+        <Authors show={page === 'authors'} />
+        <Books show={page === 'books'} />
+      </div>
+    )
   }
 
   return (
@@ -28,7 +37,7 @@ const App = () => {
         <button onClick={() => setPage('books')}>books</button>
         <button onClick={() => setPage('add')}>add book</button>
         <button onClick={onLogout}>logout</button>
-      </div>
+      </div>      
 
       <Authors show={page === 'authors'} />
 
