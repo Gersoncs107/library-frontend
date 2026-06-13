@@ -4,6 +4,7 @@ import Authors from './components/Authors'
 import Books from './components/Books'
 import NewBook from './components/NewBook'
 import LoginForm from './components/LoginForm'
+import SetBirthYear from './components/SetBirthYear'
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem('library-user-token'))
