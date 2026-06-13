@@ -45,6 +45,7 @@ const App = () => {
       </div>
 
       <Authors show={page === 'authors'} />
+      <SetBirthYear show={page === 'authors'} />
       <Books show={page === 'books'} />
       <NewBook show={page === 'add'} />
     </div>
