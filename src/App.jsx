@@ -14,7 +14,6 @@ const App = () => {
     setToken(null)
     localStorage.clear()
     client.resetStore()
-
     setPage('authors')
   }
 
@@ -26,11 +25,12 @@ const App = () => {
           <button onClick={() => setPage('books')}>books</button>
           <button onClick={() => setPage('login')}>login</button>
         </div>
-        <Authors show={page === 'authors'} />
+        <Authors show={page === 'authors'} token={null} />
         <Books show={page === 'books'} />
         <LoginForm
           show={page === 'login'}
           setToken={setToken}
+          setPage={setPage}
           setError={(msg) => console.error(msg)}
         />
       </div>
@@ -46,7 +46,7 @@ const App = () => {
         <button onClick={onLogout}>logout</button>
       </div>
 
-      <Authors show={page === 'authors'} />
+      <Authors show={page === 'authors'} token={token} />
       <Books show={page === 'books'} />
       <NewBook show={page === 'add'} />
     </div>
