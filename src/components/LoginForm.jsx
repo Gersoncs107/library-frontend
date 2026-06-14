@@ -7,7 +7,7 @@ const LoginForm = ({ show, setError, setToken }) => {
   const [password, setPassword] = useState('')
 
   const [login] = useMutation(LOGIN, {
-    onCompleted: (data) => {
+    onCompleted: (data, setPage) => {
       const token = data.login.value
       setToken(token)
       localStorage.setItem('library-user-token', token)
