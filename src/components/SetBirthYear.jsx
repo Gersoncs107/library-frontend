@@ -21,7 +21,7 @@ const SetBirthYear = (props) => {
         setBornTo: parseInt(born)
       }
     })
-
+    console.log('edit author...', { name, setBornTo: parseInt(born) })
     setBorn('')
   }
 
