@@ -2,6 +2,7 @@ import { ALL_BOOKS } from "../queries"
 import { useQuery } from "@apollo/client/react"
 
 const Books = (props) => {
+  const [selectedGenre, setSelectedGenre] = useState(null)
   const { loading, error, data } = useQuery(ALL_BOOKS)
 
   if (loading) return <p>Loading...</p>
