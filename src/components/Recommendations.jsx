@@ -31,3 +31,5 @@ const Recommendations = ({show, favoriteGenre}) => {
         </div>
     );
 }
+
+export default Recommendations;
