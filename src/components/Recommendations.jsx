@@ -20,7 +20,7 @@ const Recommendations = ({show, favoriteGenre}) => {
     return (
         <div>
             <h2>Recommendations</h2>
-            <p>Books in your favorite genre: {favoriteGenre}</p>
+            <p>Books in your favorite genre patterns: {favoriteGenre}</p>
             <ul>
                 {books
                     .filter(book => book.genres.includes(favoriteGenre))
