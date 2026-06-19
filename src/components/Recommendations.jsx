@@ -2,7 +2,6 @@ import {useState, useEffect} from 'react';import {useQuery} from '@apollo/client
 import {ALL_BOOKS} from '../queries';
 
 const Recommendations = ({show, favoriteGenre}) => {
-
     const {loading, error, data} = useQuery(ALL_BOOKS);
 
     useEffect(() => {
