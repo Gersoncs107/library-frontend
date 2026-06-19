@@ -4,12 +4,6 @@ import {ALL_BOOKS} from '../queries';
 const Recommendations = ({show, favoriteGenre}) => {
     const {loading, error, data} = useQuery(ALL_BOOKS);
 
-    useEffect(() => {
-        if (data) {
-            setBooks(data.allBooks);
-        }
-    }, [data]);
-
     if (!show) {
         return null;
     }
