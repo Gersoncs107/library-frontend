@@ -19,19 +19,29 @@ const Recommendations = ({show, favoriteGenre}) => {
     const books = data.allBooks;
     const recommendedBooks = books.filter(book => book.genres.includes(favoriteGenre));
     
-    return (
-        <div>
-            <h2>Recommendations</h2>
-            <p>Books in your favorite genre patterns: {favoriteGenre}</p>
-            <ul>
-                {books
-                    .filter(book => book.genres.includes(favoriteGenre))
-                    .map(book => (
-                        <li key={book.id}>{book.title} by {book.author.name}</li>
-                    ))}
-            </ul>
-        </div>
-    );
+     return (
+    <div>
+      <h2>recommendations</h2>
+      <p>books in your favorite genre <strong>{favoriteGenre}</strong></p>
+ 
+      <table>
+        <tbody>
+          <tr>
+            <th></th>
+            <th>author</th>
+            <th>published</th>
+          </tr>
+          {recommendedBooks.map((book) => (
+            <tr key={book.id}>
+              <td>{book.title}</td>
+              <td>{book.author.name}</td>
+              <td>{book.published}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
 }
 
 export default Recommendations;
