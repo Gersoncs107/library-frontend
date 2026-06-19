@@ -8,6 +8,10 @@ const Recommendations = ({show, favoriteGenre}) => {
         return null;
     }
 
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
     return (
         <div>
             <h2>Recommendations</h2>
