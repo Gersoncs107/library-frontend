@@ -17,6 +17,7 @@ const Recommendations = ({show, favoriteGenre}) => {
     }
 
     const books = data.allBooks;
+    const recommendedBooks = books.filter(book => book.genres.includes(favoriteGenre));
     
     return (
         <div>
