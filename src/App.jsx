@@ -51,7 +51,7 @@ const App = () => {
       <Authors show={page === 'authors'} token={token} />
       <Books show={page === 'books'} />
       <NewBook show={page === 'add'} />
-      <Recommendations show={page === 'recommendations'} favoriteGenre={token ? JSON.parse(atob(token.split('.')[1])).favoriteGenre : null} />
+      <Recommendations show={page === 'recommendations'} />
     </div>
   )
 }
