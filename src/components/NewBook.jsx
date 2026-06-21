@@ -24,7 +24,6 @@ const NewBook = (props) => {
         }
       })
 
-      // Atualiza também o cache de cada genre do novo livro, se já estiver em cache
       newBook.genres.forEach((g) => {
         cache.updateQuery({ query: ALL_BOOKS, variables: { genre: g } }, (existing) => {
           if (!existing) return existing
