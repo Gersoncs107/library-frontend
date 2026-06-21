@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CREATE_BOOK, ALL_AUTHORS, ALL_BOOKS } from '../queries'
+import { CREATE_BOOK, ALL_BOOKS, ALL_AUTHORS } from '../queries'
 import { useMutation } from '@apollo/client/react'
 
 const NewBook = (props) => {
@@ -10,14 +10,33 @@ const NewBook = (props) => {
   const [genres, setGenres] = useState([])
 
   const [createBook] = useMutation(CREATE_BOOK, {
-    onError: (error) => setError(error.graphQLErrors[0].message),
+    onError: (error) => {
+      console.error(error.graphQLErrors?.[0]?.message || error.message)
+    },
     update: (cache, response) => {
-      cache.updateQuery({ query: ALL_BOOKS }, ({ allBooks }) => {
+      const newBook = response.data.addBook
+
+      // Atualiza o cache da query "todos os livros" (sem filtro de genre)
+      cache.updateQuery({ query: ALL_BOOKS, variables: { genre: null } }, (existing) => {
+        if (!existing) return existing
         return {
-          allBooks: allBooks.concat(response.data.addBook)
+          allBooks: existing.allBooks.concat(newBook)
         }
       })
-    }
+
+      // Atualiza também o cache de cada genre do novo livro, se já estiver em cache
+      newBook.genres.forEach((g) => {
+        cache.updateQuery({ query: ALL_BOOKS, variables: { genre: g } }, (existing) => {
+          if (!existing) return existing
+          return {
+            allBooks: existing.allBooks.concat(newBook)
+          }
+        })
+      })
+    },
+    refetchQueries: [
+      { query: ALL_AUTHORS }
+    ]
   })
 
   if (!props.show) {
@@ -35,7 +54,7 @@ const NewBook = (props) => {
         genres
       }
     })
-    console.log('create book...', { title, author, published: parseInt(published), genres })
+
     setTitle('')
     setPublished('')
     setAuthor('')
