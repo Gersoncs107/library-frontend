@@ -16,7 +16,6 @@ const NewBook = (props) => {
     update: (cache, response) => {
       const newBook = response.data.addBook
 
-      // Atualiza o cache da query "todos os livros" (sem filtro de genre)
       cache.updateQuery({ query: ALL_BOOKS, variables: { genre: null } }, (existing) => {
         if (!existing) return existing
         return {
