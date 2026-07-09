@@ -31,6 +31,7 @@ export const FIND_BOOK = gql`
       ...BookDetails
     }
   }
+    ${BOOK_DETAILS}
 `
 
 export const ALL_BOOKS = gql`
