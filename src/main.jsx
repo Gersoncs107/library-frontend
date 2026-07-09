@@ -24,6 +24,12 @@ const authLink = setContext((_, { headers }) => {
   }
 })
 
+const wsLink = new GraphQLWsLink(
+  createClient({
+    url: 'ws://localhost:4000',
+  }),
+)
+
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: authLink.concat(httpLink),
