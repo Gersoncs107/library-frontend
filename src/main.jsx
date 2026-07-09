@@ -6,6 +6,10 @@ import { ApolloClient, ApolloLink, InMemoryCache, createHttpLink } from '@apollo
 import { setContext } from '@apollo/client/link/context'
 import { ApolloProvider } from '@apollo/client/react'
 
+import { GraphQLWsLink } from '@apollo/client/link/subscriptions'
+import { getMainDefinition } from '@apollo/client/utilities'
+import { createClient } from 'graphql-ws'
+
 const httpLink = createHttpLink({
   uri: 'http://localhost:4000/graphql',
 })
