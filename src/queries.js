@@ -40,6 +40,7 @@ export const ALL_BOOKS = gql`
       ...BookDetails
     }
   }
+  ${BOOK_DETAILS}
 `
 
 export const CREATE_BOOK = gql`
