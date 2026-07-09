@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 
-import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
+import { ApolloClient, ApolloLink, InMemoryCache, createHttpLink } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import { ApolloProvider } from '@apollo/client/react'
 
