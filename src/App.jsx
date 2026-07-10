@@ -12,6 +12,12 @@ const App = () => {
   const [page, setPage] = useState('authors')
   const client = useApolloClient()
 
+  useSubscription(BOOK_ADDED, {
+    onData: ({ data }) => {
+
+    }
+  })
+
   const onLogout = () => {
     setToken(null)
     localStorage.clear()
