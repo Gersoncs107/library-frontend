@@ -82,13 +82,7 @@ export const EDIT_BORN = gql`
 export const BOOK_ADDED = gql`
   subscription {
     bookAdded {
-      id
-      title
-      author {
-        name
-      }
-      published
-      genres
+      ...BookDetails
     }
   }
 `
