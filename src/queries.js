@@ -85,6 +85,7 @@ export const BOOK_ADDED = gql`
       ...BookDetails
     }
   }
+  ${BOOK_DETAILS}
 `
 
 export const LOGIN = gql`
