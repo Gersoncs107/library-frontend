@@ -5,6 +5,7 @@ import Books from './components/Books'
 import NewBook from './components/NewBook'
 import LoginForm from './components/LoginForm'
 import Recommendations from './components/Recommendations'
+import {ALL_BOOKS, BOOK_ADDED } from './queries'
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem('library-user-token'))
