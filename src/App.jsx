@@ -18,14 +18,7 @@ const App = () => {
       const addedBook = data.data.bookAdded
       window.alert(`New book added: ${addedBook.title} by ${addedBook.author.name}`)
       const dataInStore = client.readQuery({ query: ALL_BOOKS })
-      if (!dataInStore.allBooks.find(b => b.id === addedBook.id)) {
-        client.writeQuery({
-          query: ALL_BOOKS,
-          data: {
-            allBooks: [...dataInStore.allBooks, addedBook]
-          }
-        })
-      }
+      addBookToCache(client.cache, addedBook)
     }
   })
 
