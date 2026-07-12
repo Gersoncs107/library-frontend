@@ -1,4 +1,4 @@
-import { addBookToCache } from './components/Books'
+import { addBookToCache } from './utils/apolloCache'
 import { useState } from 'react'
 import { useApolloClient, useSubscription } from '@apollo/client/react'
 import Authors from './components/Authors'
