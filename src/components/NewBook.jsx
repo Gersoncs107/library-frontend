@@ -16,13 +16,7 @@ const NewBook = (props) => {
     },
     update: (cache, response) => {
       const newBook = response.data.addBook
-
-      cache.updateQuery({ query: ALL_BOOKS, variables: { genre: null } }, (existing) => {
-        if (!existing) return existing
-        return {
-          allBooks: existing.allBooks.concat(newBook)
-        }
-      })
+      addBookToCache(cache, newBook)
 
       newBook.genres.forEach((g) => {
         cache.updateQuery({ query: ALL_BOOKS, variables: { genre: g } }, (existing) => {
